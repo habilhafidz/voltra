@@ -1,0 +1,341 @@
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* General Styling */
+body {
+  background-color: black;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+body, html {
+  opacity: 0.9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #1a2529;
+  color: white;
+}
+
+.container {
+  position: relative; /* Agar teks berada di atas video */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  height: 730px; /* Sesuaikan tinggi kontainer */
+  color: white;
+  text-align: center;
+  overflow: hidden; /* Sembunyikan bagian video yang melampaui container */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Tempatkan video di belakang teks */
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Sesuaikan ukuran video */
+}
+
+h1, p {
+  z-index: 1; /* Pastikan teks berada di atas video */
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+
+/* Styling untuk elemen 'about' */
+.about {
+    text-align: center;
+}
+
+.about-button-container {
+  display: flex;              /* Menggunakan flexbox */
+  justify-content: center;    /* Memusatkan secara horizontal */
+  align-items: center;        /* Memusatkan secara vertikal (jika diperlukan) */
+  height: 100px;             /* Atur tinggi jika ingin memusatkan secara vertikal */
+  margin-top: 20px;          /* Tambahkan margin atas jika diperlukan */
+}
+
+#aboutToggle {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: rgba(241, 110, 74, 0.7); /* Tombol semi transparan */
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+#aboutToggle:hover {
+   background-color: #173641;
+   transform: scale(1.05);
+}
+
+.about {
+    display: none; /* Sembunyikan jendela secara default */
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+}
+
+.about-content {
+    position: relative;
+    margin: 15% auto; /* Pusatkan jendela */
+    margin-top: 150px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+    height: 430px;
+    background-color: rgba(68, 94, 107, 0.7); /* Warna latar jendela */
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    z-index: 1000;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0); /* Posisi awal */
+  }
+  50% {
+    transform: translateY(-10px); /* Bergerak naik sedikit */
+  }
+  100% {
+    transform: translateY(0); /* Kembali ke posisi awal */
+  }
+ }
+
+.about-content h2 {
+    color: red; /* Mengganti text-color menjadi color */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*---------------------------------------------------------------------------------------------*/
+
+/*                        RIGHT RIGHT RIGHT                        */
+
+.h2projects {
+    color: rgba(241, 110, 74, 0.7);
+    margin-bottom: 100px;
+}
+
+.projects {
+    padding-bottom: 50px;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Menyesuaikan lebar elemen project1 */
+.project1 {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 100%; /* Ubah sesuai kebutuhan, misalnya 80% dari lebar layar */
+    max-width: 1200px; /* Atau gunakan batas maksimum */
+}
+
+
+.project1 img {
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 2px;
+    margin-right: 50px;
+    transition: all 0.9s ease-in-out;
+}
+
+.project1 img:hover {
+    transform: scale(1.05);
+}
+
+
+.project2 {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    width: 100%; /* Ubah sesuai kebutuhan, misalnya 80% dari lebar layar */
+    max-width: 1200px; /* Atau gunakan batas maksimum */
+}
+
+
+.project2 img {
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 2px;
+    transition: all 0.9s ease-in-out;
+}
+
+.project2 img:hover {
+    transform: scale(1.05);
+}
+
+.project-desc1 {
+    text-align: justify;
+    max-width: 750px; /* Atur sesuai kebutuhan */
+    line-height: 1.6; /* Meningkatkan keterbacaan */
+}
+
+.project-desc2 {
+    text-align: justify;
+    max-width: 750px; /* Atur sesuai kebutuhan */
+    line-height: 1.6; /* Meningkatkan keterbacaan */
+    margin-right: 50px;
+}
+
+.project-title {
+    font-size: 1.5em;
+    color: #e8e8e8;
+}
+
+.text-container {
+    margin-top: 10px; /* Atur jarak atas menjadi negatif */
+}
+
+
+/*---------------------------------------------------------------------------------------------*/
+
+/* Styling untuk elemen 'more' */
+.more {
+    text-align: center;
+}
+
+#toggleMore {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.more {
+    display: none; /* Sembunyikan jendela secara default */
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 400%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
+}
+
+.more-content {
+    position: relative;
+    margin: 15% auto; /* Pusatkan jendela */
+    margin-top: 2000px;
+    padding: 20px;
+    width: 80%;
+    max-width: 500px;
+    background-color: black; /* Warna latar jendela */
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.more-content h2 {
+    text-color: red;
+}
+
+.closebtn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.closebtn:hover,
+.closebtn:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------------------------------------------*/
+
+
+/* Cursor Styling */
+.cursor {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   background-color: rgba(253,228,158, 0.7);
+   position: absolute;
+   pointer-events: none;
+   z-index: 9999;
+   transition: none; /* Remove transition to make it follow instantly */
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+.background-blur1 {
+    position: absolute;
+    width: 100vh;
+    height: 100vh;
+    margin: 1vh 0 0 10vh;
+    background: radial-gradient(circle at 40% 30%, rgba(255, 0, 182, 0.5), transparent 85%),
+                radial-gradient(circle at 60% 70%, rgba(0, 219, 255, 0.8), transparent 90%);
+    filter: blur(200px);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+    transform-origin: center; /* Putar di tengah elemen */
+    z-index: -10;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
